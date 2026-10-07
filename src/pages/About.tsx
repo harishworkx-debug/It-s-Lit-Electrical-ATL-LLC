@@ -214,7 +214,7 @@ export default function About() {
             {SERVICES.map((s) => (
               <Link
                 key={s.slug}
-                to={`/services/${s.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
+                to={`/${s.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
                 className="group flex flex-col items-center text-center bg-secondary-50 hover:bg-primary-50 rounded-xl p-6 transition-all hover:shadow-lg"
               >
                 <div className="w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
@@ -260,7 +260,7 @@ export default function About() {
                   {LOCATIONS.map((l) => (
                     <Link
                       key={l.slug}
-                      to={`/locations/${l.slug}`}
+                      to={`/${l.slug}`}
                       className="flex items-center gap-2 text-secondary-700 hover:text-primary-600 transition-colors text-sm"
                     >
                       <MapPin className="w-4 h-4 text-primary-500" />

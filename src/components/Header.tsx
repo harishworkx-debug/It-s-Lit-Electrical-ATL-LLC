@@ -106,7 +106,7 @@ export default function Header() {
                         {SERVICES.map((s) => (
                           <Link
                             key={s.slug}
-                            to={`/services/${s.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
+                            to={`/${s.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
                             className="block px-4 py-2.5 text-sm text-secondary-600 hover:bg-primary-50 hover:text-primary-700 transition-colors"
                           >
                             {s.name}
@@ -141,7 +141,7 @@ export default function Header() {
                         {LOCATIONS.map((l) => (
                           <Link
                             key={l.slug}
-                            to={`/locations/${l.slug}`}
+                            to={`/${l.slug}`}
                             className="block px-4 py-2.5 text-sm text-secondary-600 hover:bg-primary-50 hover:text-primary-700 transition-colors"
                           >
                             {l.name}
@@ -208,7 +208,7 @@ export default function Header() {
                     {SERVICES.map((s) => (
                       <Link
                         key={s.slug}
-                        to={`/services/${s.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
+                        to={`/${s.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
                         className="block py-2 px-2 text-secondary-300 text-sm hover:text-primary-400"
                       >
                         {s.name}
@@ -235,7 +235,7 @@ export default function Header() {
                     {LOCATIONS.map((l) => (
                       <Link
                         key={l.slug}
-                        to={`/locations/${l.slug}`}
+                        to={`/${l.slug}`}
                         className="block py-2 px-2 text-secondary-300 text-sm hover:text-primary-400"
                       >
                         {l.name}

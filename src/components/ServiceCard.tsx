@@ -10,7 +10,7 @@ export default function ServiceCard({ service }: { service: ServiceData }) {
   return (
     <Reveal>
       <Link
-        to={`/services/${service.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
+        to={`/${service.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
         className="card group block h-full"
       >
         <div className="relative h-48 overflow-hidden">

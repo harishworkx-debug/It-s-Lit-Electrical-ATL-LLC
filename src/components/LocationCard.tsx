@@ -7,7 +7,7 @@ export default function LocationCard({ location }: { location: LocationData }) {
   return (
     <Reveal>
       <Link
-        to={`/locations/${location.slug}`}
+        to={`/${location.slug}`}
         className="card group block h-full"
       >
         <div className="relative h-40 overflow-hidden">

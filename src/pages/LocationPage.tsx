@@ -27,7 +27,7 @@ export default function LocationPage() {
     return <Navigate to="/service-areas" replace />;
   }
 
-  const path = `/locations/${location.slug}`;
+  const path = `/${location.slug}`;
   const primaryService = SERVICES.find((s) => s.slug === location.primaryService);
   const Icon = primaryService ? ((Icons as any)[primaryService.icon] || Icons.Zap) : Icons.Zap;
   const otherLocations = LOCATIONS.filter((l) => l.slug !== location.slug).slice(0, 5);
@@ -148,7 +148,7 @@ export default function LocationPage() {
                         Call {BUSINESS.phone}
                       </a>
                       <Link
-                        to={`/services/${primaryService.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
+                        to={`/${primaryService.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
                         className="inline-flex items-center gap-2 text-primary-600 font-bold hover:text-primary-700 transition-colors"
                       >
                         Learn About {primaryService.name}
@@ -214,7 +214,7 @@ export default function LocationPage() {
                       {otherLocations.map((l) => (
                         <li key={l.slug}>
                           <Link
-                            to={`/locations/${l.slug}`}
+                            to={`/${l.slug}`}
                             className="flex items-center justify-between text-sm text-secondary-600 hover:text-primary-600 transition-colors group"
                           >
                             <span className="flex items-center gap-2">

@@ -10,6 +10,20 @@ import LocationPage from '@/pages/LocationPage';
 import Contact from '@/pages/Contact';
 import FAQ from '@/pages/FAQ';
 
+import { useParams, Navigate } from 'react-router-dom';
+import { SERVICES, LOCATIONS, BUSINESS } from '@/data/siteData';
+
+const DynamicRoute = () => {
+  const { slug } = useParams();
+  const isService = SERVICES.some(s => `${s.slug}-${BUSINESS.mainLocation.toLowerCase()}` === slug);
+  const isLocation = LOCATIONS.some(l => l.slug === slug);
+
+  if (isService) return <ServicePage />;
+  if (isLocation) return <LocationPage />;
+  
+  return <Navigate to="/" replace />;
+};
+
 export default function App() {
   return (
     <HelmetProvider>
@@ -19,11 +33,10 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/services/:slug" element={<ServicePage />} />
             <Route path="/service-areas" element={<ServiceAreas />} />
-            <Route path="/locations/:slug" element={<LocationPage />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path="/:slug" element={<DynamicRoute />} />
             <Route path="*" element={<Home />} />
           </Route>
         </Routes>

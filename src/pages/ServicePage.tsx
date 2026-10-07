@@ -26,7 +26,7 @@ export default function ServicePage() {
     return <Navigate to="/services" replace />;
   }
 
-  const path = `/services/${service.slug}-${BUSINESS.mainLocation.toLowerCase()}`;
+  const path = `/${service.slug}-${BUSINESS.mainLocation.toLowerCase()}`;
   const Icon = (Icons as any)[service.icon] || Icons.Zap;
   const relatedServices = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 5);
 
@@ -229,7 +229,7 @@ export default function ServicePage() {
                       {relatedServices.map((s) => (
                         <li key={s.slug}>
                           <Link
-                            to={`/services/${s.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
+                            to={`/${s.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
                             className="flex items-center justify-between text-sm text-secondary-600 hover:text-primary-600 transition-colors group"
                           >
                             {s.name}

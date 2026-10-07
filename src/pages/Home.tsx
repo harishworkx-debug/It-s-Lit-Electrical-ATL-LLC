@@ -350,7 +350,7 @@ export default function Home() {
                   ))}
                 </div>
                 <Link
-                  to={`/services/residential-electrician-${BUSINESS.mainLocation.toLowerCase()}`}
+                  to={`/residential-electrician-${BUSINESS.mainLocation.toLowerCase()}`}
                   className="inline-flex items-center gap-2 mt-8 btn-primary"
                 >
                   Residential Electrician Services
@@ -395,7 +395,7 @@ export default function Home() {
                   ))}
                 </div>
                 <Link
-                  to={`/services/electrical-repair-${BUSINESS.mainLocation.toLowerCase()}`}
+                  to={`/electrical-repair-${BUSINESS.mainLocation.toLowerCase()}`}
                   className="inline-flex items-center gap-2 mt-8 btn-primary"
                 >
                   Electrical Repair Services

@@ -93,7 +93,7 @@ export default function FAQ() {
             {SERVICES.map((s) => (
               <Link
                 key={s.slug}
-                to={`/services/${s.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
+                to={`/${s.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
                 className="group flex flex-col items-center text-center bg-white hover:bg-primary-50 rounded-xl p-6 transition-all hover:shadow-lg border border-secondary-100"
               >
                 <HelpCircle className="w-10 h-10 text-primary-500 mb-3 group-hover:scale-110 transition-transform" />

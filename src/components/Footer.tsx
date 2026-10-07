@@ -66,7 +66,7 @@ export default function Footer() {
               {SERVICES.map((s) => (
                 <li key={s.slug}>
                   <Link
-                    to={`/services/${s.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
+                    to={`/${s.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
                     className="hover:text-primary-400 transition-colors"
                   >
                     {s.name}
@@ -83,7 +83,7 @@ export default function Footer() {
               {LOCATIONS.map((l) => (
                 <li key={l.slug}>
                   <Link
-                    to={`/locations/${l.slug}`}
+                    to={`/${l.slug}`}
                     className="hover:text-primary-400 transition-colors"
                   >
                     {l.name}
