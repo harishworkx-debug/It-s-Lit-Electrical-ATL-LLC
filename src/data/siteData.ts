@@ -2,8 +2,8 @@ export const BUSINESS = {
   name: "It\'s Lit Electrical ATL LLC",
   shortName: "It\'s Lit Electrical ATL",
   domain: 'https://itslitelectricalatlllc.net',
-  phone: '404-397-7984',
-  phoneRaw: '4043977984',
+  phone: '(470) 204-4987',
+  phoneRaw: '14702044987',
   email: 'info@itslitelectricalatlllc.net',
   mapsUrl: 'https://maps.app.goo.gl/NXc8DcN9xiVWkEz3A',
   mapsEmbed:
@@ -23,13 +23,13 @@ export const BUSINESS = {
     lng: -84.388,
   },
   hours: [
-    { day: 'Monday', hours: '7:00 AM – 7:00 PM' },
-    { day: 'Tuesday', hours: '7:00 AM – 7:00 PM' },
-    { day: 'Wednesday', hours: '7:00 AM – 7:00 PM' },
-    { day: 'Thursday', hours: '7:00 AM – 7:00 PM' },
-    { day: 'Friday', hours: '7:00 AM – 7:00 PM' },
-    { day: 'Saturday', hours: '8:00 AM – 5:00 PM' },
-    { day: 'Sunday', hours: 'By Appointment' },
+    { day: 'Monday', hours: 'Open 24 Hours' },
+    { day: 'Tuesday', hours: 'Open 24 Hours' },
+    { day: 'Wednesday', hours: 'Open 24 Hours' },
+    { day: 'Thursday', hours: 'Open 24 Hours' },
+    { day: 'Friday', hours: 'Open 24 Hours' },
+    { day: 'Saturday', hours: 'Open 24 Hours' },
+    { day: 'Sunday', hours: 'Open 24 Hours' },
   ],
 } as const;
 
@@ -111,7 +111,9 @@ export type ServiceSlug =
   | 'ceiling-fan-installation'
   | 'ev-charger-installation'
   | 'electrical-troubleshooting'
-  | 'electrical-inspection';
+  | 'electrical-inspection'
+  | 'emergency-electrician'
+  | 'commercial-electrician';
 
 export interface ServiceData {
   slug: ServiceSlug;
@@ -134,6 +136,108 @@ export interface ServiceData {
 }
 
 export const SERVICES: ServiceData[] = [
+  {
+    slug: 'emergency-electrician',
+    name: 'Emergency Electrician',
+    shortName: 'Emergency',
+    icon: 'AlertTriangle',
+    tagline: 'Rapid-response emergency electrical repair in Atlanta',
+    image: IMAGES.safetyGear,
+    imageAlt: 'Emergency electrician arriving to fix an electrical issue in Atlanta',
+    metaTitle: 'Emergency Electrician in Atlanta, GA | It\'s Lit Electrical ATL LLC',
+    metaDescription: 'Need an emergency electrician in Atlanta, GA? It\'s Lit Electrical ATL LLC provides fast, reliable emergency electrical repairs. Call 404-397-7984.',
+    h1: 'Emergency Electrician in Atlanta, Georgia',
+    intro: 'Electrical emergencies do not wait for a convenient time. Sparking outlets, a sudden loss of power, or a breaker that keeps tripping can be incredibly dangerous. It\'s Lit Electrical ATL LLC provides rapid-response emergency electrician services in Atlanta to keep your home and family safe when you need us most.',
+    sections: [
+      {
+        heading: 'What Counts as an Electrical Emergency?',
+        body: 'If you see sparks, smell burning plastic near an outlet, have a humming or buzzing breaker panel, or completely lose power in part of your home while neighbors still have theirs, you need an emergency electrician. Never ignore these signs, as they can quickly lead to electrical fires or severe damage to your home\'s wiring.'
+      },
+      {
+        heading: 'Fast, Safe Emergency Response',
+        body: 'When you call us for an electrical emergency, we prioritize your safety. Our licensed electricians arrive with fully stocked trucks, ready to troubleshoot and repair the most common dangerous electrical issues on the spot. We quickly isolate the hazard, diagnose the root cause, and perform the necessary repairs to restore power and safety to your home.'
+      },
+      {
+        heading: 'Do Not Try to Fix it Yourself',
+        body: 'During an electrical emergency, it can be tempting to try a DIY fix to restore power quickly. This is extremely dangerous. Without the proper training and diagnostic tools, you risk severe shock, electrocution, or starting a fire. Always shut off the main breaker if you suspect a serious hazard and wait for our professional emergency electrician to arrive.'
+      }
+    ],
+    benefits: [
+      'Rapid response for urgent electrical issues',
+      'Fully equipped trucks for on-the-spot repairs',
+      'Licensed electricians trained in hazard mitigation',
+      'Honest, upfront pricing even during emergencies'
+    ],
+    process: [
+      { title: 'Call Us', description: 'Call 404-397-7984 immediately. If there is an active fire, call 911 first.' },
+      { title: 'Isolate', description: 'We instruct you on how to safely shut off power if necessary before we arrive.' },
+      { title: 'Diagnose', description: 'Our electrician quickly identifies the hazard and the root cause of the failure.' },
+      { title: 'Repair', description: 'We perform code-compliant repairs to restore safety and power to your home.' }
+    ],
+    faqs: [
+      {
+        question: 'Should I call an emergency electrician for a tripped breaker?',
+        answer: 'If a breaker trips once, you can try resetting it. But if it immediately trips again, feels hot to the touch, or makes a buzzing sound, leave it off and call an emergency electrician. This indicates a serious short circuit or overload.'
+      },
+      {
+        question: 'What do I do if I smell burning near an outlet?',
+        answer: 'A burning smell near an outlet or switch is a major fire hazard. Immediately turn off the breaker for that room at your main panel and call us. Do not use the outlet under any circumstances.'
+      }
+    ],
+    calloutTitle: 'Experiencing an Electrical Emergency?',
+    calloutText: 'Don\'t wait. Electrical hazards are extremely dangerous. Call It\'s Lit Electrical ATL LLC immediately for fast emergency service in Atlanta.'
+  },
+  {
+    slug: 'commercial-electrician',
+    name: 'Commercial Electrician',
+    shortName: 'Commercial',
+    icon: 'Building',
+    tagline: 'Reliable commercial electrical services in Atlanta',
+    image: IMAGES.electricianDrill,
+    imageAlt: 'Commercial electrician installing wiring in an Atlanta business',
+    metaTitle: 'Commercial Electrician in Atlanta, GA | It\'s Lit Electrical ATL LLC',
+    metaDescription: 'Looking for a commercial electrician in Atlanta, GA? It\'s Lit Electrical ATL LLC provides expert electrical services for businesses, retail, and offices.',
+    h1: 'Commercial Electrician in Atlanta, Georgia',
+    intro: 'Your business relies on safe, dependable power to operate smoothly. Electrical downtime doesn\'t just cause inconvenience — it costs you money. It\'s Lit Electrical ATL LLC provides expert commercial electrical services in Atlanta, Georgia, helping retail stores, offices, restaurants, and light industrial facilities run efficiently and safely.',
+    sections: [
+      {
+        heading: 'Comprehensive Commercial Electrical Services',
+        body: 'We understand the unique demands of commercial electrical systems. From upgrading panels and transformers to installing dedicated circuits for heavy machinery, we handle it all. Our commercial services include office build-outs, retail lighting design and installation, commercial EV charger stations, dedicated server room wiring, and routine electrical maintenance. We work efficiently to minimize disruption to your employees and customers.'
+      },
+      {
+        heading: 'Code Compliance and Safety Inspections',
+        body: 'Commercial properties are subject to strict electrical codes and safety regulations. Whether you are moving into a new commercial space, passing an annual fire marshal inspection, or expanding your operations, our licensed electricians ensure your electrical system is 100% compliant. We conduct thorough safety inspections, correct code violations, and ensure your emergency exit lighting and smoke detectors are fully operational.'
+      },
+      {
+        heading: 'Lighting Upgrades for Businesses',
+        body: 'Lighting is a major expense for any business. Upgrading your office or warehouse to modern LED lighting not only drastically reduces your monthly energy bills but also improves workplace safety and employee productivity. We design and install high-efficiency lighting systems, retrofits, and smart lighting controls that pay for themselves over time while creating a better environment for your team.'
+      }
+    ],
+    benefits: [
+      'Minimal disruption to your business operations',
+      'Expertise in commercial code compliance and safety',
+      'Energy-efficient lighting upgrades that save money',
+      'Dedicated circuits and panel upgrades for specialized equipment'
+    ],
+    process: [
+      { title: 'Consultation', description: 'We discuss your business needs, timelines, and specific electrical requirements.' },
+      { title: 'Proposal', description: 'We provide a detailed estimate and scope of work for your project.' },
+      { title: 'Execution', description: 'Our team completes the work efficiently, coordinating with your schedule.' },
+      { title: 'Inspection', description: 'We ensure all work passes commercial electrical inspections and meets your standards.' }
+    ],
+    faqs: [
+      {
+        question: 'Do you work with property managers and HOAs?',
+        answer: 'Yes. We frequently partner with property managers, HOAs, and landlords to provide reliable electrical maintenance and repair services across multiple commercial and residential properties in Atlanta.'
+      },
+      {
+        question: 'Do you offer after-hours commercial electrical work?',
+        answer: 'We understand that shutting down power during business hours is often impossible. We can schedule major electrical upgrades and repairs after hours to ensure zero downtime for your daily operations.'
+      }
+    ],
+    calloutTitle: 'Need a Dependable Commercial Electrician?',
+    calloutText: 'Keep your business powered and safe. Call It\'s Lit Electrical ATL LLC for expert commercial electrical services in Atlanta.'
+  },
   {
     slug: 'electrical-repair',
     name: 'Electrical Repair',

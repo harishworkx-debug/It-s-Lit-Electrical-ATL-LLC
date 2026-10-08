@@ -14,7 +14,7 @@ import Reveal from '@/components/Reveal';
 import FAQAccordion from '@/components/FAQAccordion';
 import CTASection from '@/components/CTASection';
 import LocationCard from '@/components/LocationCard';
-import { BUSINESS, IMAGES, SERVICES, LOCATIONS, LocationData } from '@/data/siteData';
+import { BUSINESS, IMAGES, SERVICES, LOCATIONS, LocationData, REVIEWS } from '@/data/siteData';
 import { locationSchema, breadcrumbSchema } from '@/data/schema';
 
 export default function LocationPage() {
@@ -40,6 +40,10 @@ export default function LocationPage() {
       { name: location.name, path },
     ]),
   ];
+
+  // Pick a stable review based on location slug
+  const reviewIndex = location.slug.length % REVIEWS.length;
+  const review = REVIEWS[reviewIndex];
 
   return (
     <>
@@ -158,6 +162,81 @@ export default function LocationPage() {
                   </div>
                 </Reveal>
               )}
+
+              {/* Comprehensive Services in Location */}
+              <Reveal>
+                <div className="mt-12 mb-8">
+                  <h2 className="text-2xl md:text-3xl font-heading font-bold text-secondary-900 mb-6">
+                    Comprehensive Electrical Services in {location.name}
+                  </h2>
+                  <p className="text-secondary-600 mb-8 leading-relaxed text-lg">
+                    Whether you have an emergency electrical issue or are planning a modern home upgrade, we offer a full range of residential electrical services tailored to {location.name} homes. Explore our services below or{' '}
+                    <Link to="/contact" className="text-primary-600 font-bold hover:underline">contact us today</Link>.
+                  </p>
+                  
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    {SERVICES.map((service, index) => {
+                      const ServiceIcon = (Icons as any)[service.icon] || Icons.Zap;
+                      return (
+                        <Link 
+                          key={index}
+                          to={`/${service.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
+                          className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-secondary-100 flex gap-4 items-start group"
+                        >
+                          <div className="w-12 h-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 group-hover:bg-primary-500 group-hover:text-secondary-950 transition-colors">
+                            <ServiceIcon className="w-6 h-6" />
+                          </div>
+                          <div>
+                            <h3 className="font-bold text-secondary-900 mb-1 group-hover:text-primary-600 transition-colors">
+                              {service.name}
+                            </h3>
+                            <p className="text-secondary-500 text-sm line-clamp-2">
+                              {service.tagline}
+                            </p>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Customer Testimonials & Reviews */}
+              <Reveal>
+                <div className="mb-12 bg-secondary-900 rounded-3xl p-8 lg:p-10 text-white">
+                  <h2 className="text-2xl md:text-3xl font-heading font-bold mb-6">
+                    Top-Rated by Our Neighbors
+                  </h2>
+                  <p className="text-secondary-300 mb-8 leading-relaxed">
+                    Our commitment to safety and quality has earned us the trust of homeowners throughout {location.name} and the greater {BUSINESS.mainLocation} area.
+                  </p>
+                  
+                  <div className="bg-secondary-800 p-6 sm:p-8 rounded-2xl border border-secondary-700">
+                    <div className="flex gap-1 mb-4">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Icons.Star
+                          key={star}
+                          className="w-5 h-5 fill-primary-500 text-primary-500"
+                        />
+                      ))}
+                    </div>
+                    <p className="text-secondary-200 italic mb-6 text-lg">
+                      "{review.text}"
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center font-bold text-secondary-950">
+                        {review.name.charAt(0)}
+                      </div>
+                      <div>
+                        <div className="font-bold text-white">{review.name}</div>
+                        <div className="text-secondary-400 text-sm">
+                          {review.location}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
 
               {/* FAQs */}
               <Reveal>

@@ -99,7 +99,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
-                <span>{BUSINESS.address.city}, {BUSINESS.address.state} {BUSINESS.address.zip}</span>
+                <span>Serving {BUSINESS.serviceAreaRegion}</span>
               </li>
               <li className="flex items-start gap-2">
                 <Phone className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
@@ -116,9 +116,8 @@ export default function Footer() {
               <li className="flex items-start gap-2">
                 <Clock className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <div>Mon–Fri: 7:00 AM – 7:00 PM</div>
-                  <div>Sat: 8:00 AM – 5:00 PM</div>
-                  <div>Sun: By Appointment</div>
+                  <div>Open 24/7</div>
+                  <div className="text-secondary-500 text-xs mt-1">Emergency Service Available</div>
                 </div>
               </li>
             </ul>

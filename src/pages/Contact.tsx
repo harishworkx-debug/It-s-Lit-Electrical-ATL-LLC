@@ -114,10 +114,7 @@ export default function Contact() {
                     <div>
                       <div className="text-sm text-secondary-400">Hours</div>
                       <div className="font-bold text-secondary-900 text-sm">
-                        Mon–Fri: 7:00 AM – 7:00 PM
-                      </div>
-                      <div className="text-secondary-600 text-sm">
-                        Sat: 8:00 AM – 5:00 PM · Sun: By Appointment
+                        Open 24/7 (Emergency Service)
                       </div>
                     </div>
                   </div>

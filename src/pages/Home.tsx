@@ -94,22 +94,19 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 bg-primary-500/10 border border-primary-500/30 rounded-full px-4 py-2 mb-6 animate-fade-in-down">
               <Zap className="w-4 h-4 text-primary-500" />
               <span className="text-primary-400 font-semibold text-sm">
-                Licensed & Insured Electrical Contractor
+                Licensed Electrician Atlanta
               </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-tight text-shadow-lg animate-fade-in-up">
-              Electrician in Atlanta, Georgia
+              Trusted Electrician in Atlanta, GA
               <span className="block text-primary-500 mt-2">
                 It's Lit Electrical ATL LLC
               </span>
             </h1>
 
             <p className="text-lg md:text-xl text-secondary-300 mt-6 max-w-2xl animate-fade-in-up" style={{ animationDelay: '100ms' }}>
-              Professional residential electrical services for Atlanta
-              homeowners. From panel upgrades to lighting installation, wiring,
-              EV chargers, and emergency repairs — we keep your home safe and
-              powered.
+              Providing top-tier electrical services in Atlanta. As your trusted local electrical contractor, we specialize in everything from panel upgrades and lighting to emergency electrician services. We keep your home safe, up-to-code, and fully powered.
             </p>
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-8 animate-fade-in-up" style={{ animationDelay: '200ms' }}>
@@ -131,8 +128,12 @@ export default function Home() {
                   ))}
                 </div>
                 <span className="text-secondary-300 text-sm font-semibold">
-                  Trusted by Atlanta Homeowners
+                  5.0 Average Rating
                 </span>
+              </div>
+              <div className="flex items-center gap-2 text-secondary-300">
+                <Shield className="w-5 h-5 text-primary-500" />
+                <span className="text-sm font-semibold">A+ Rating on BBB</span>
               </div>
               <div className="flex items-center gap-2 text-secondary-300">
                 <Shield className="w-5 h-5 text-primary-500" />
@@ -140,7 +141,11 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-2 text-secondary-300">
                 <Clock className="w-5 h-5 text-primary-500" />
-                <span className="text-sm font-semibold">Same-Day Service Available</span>
+                <span className="text-sm font-semibold">Open 24/7</span>
+              </div>
+              <div className="flex items-center gap-2 text-secondary-300">
+                <MapPin className="w-5 h-5 text-primary-500" />
+                <span className="text-sm font-semibold">Operating Since 2021</span>
               </div>
             </div>
           </div>
@@ -175,7 +180,7 @@ export default function Home() {
                   About Us
                 </div>
                 <h2 className="section-title">
-                  About It's Lit Electrical ATL LLC
+                  Your Local Electrician in Atlanta, GA
                 </h2>
                 <p className="text-secondary-600 mt-6 leading-relaxed text-lg">
                   {BUSINESS.name} is an Atlanta-based electrical contractor
@@ -229,7 +234,7 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 bg-primary-100 text-primary-700 rounded-full px-4 py-1.5 text-sm font-semibold mb-4">
               Our Services
             </div>
-            <h2 className="section-title">Electrical Services in Atlanta</h2>
+            <h2 className="section-title">Residential & Commercial Electrical Services</h2>
             <p className="section-subtitle mx-auto">
               Comprehensive residential electrical services for Atlanta
               homeowners. Whatever your electrical need, we have the expertise to
@@ -372,7 +377,7 @@ export default function Home() {
                   Electrical Repairs
                 </div>
                 <h2 className="section-title">
-                  Fast Electrical Repairs in Atlanta
+                  Electrical Repairs & Installations in Atlanta
                 </h2>
                 <p className="text-secondary-600 mt-6 leading-relaxed text-lg">
                   Electrical problems do not wait for a convenient time. Whether
@@ -471,7 +476,7 @@ export default function Home() {
               Service Areas
             </div>
             <h2 className="section-title">
-              Electrical Services Across Metro Atlanta
+              Serving Atlanta and Surrounding Metro Areas
             </h2>
             <p className="section-subtitle mx-auto">
               Based in Atlanta, Georgia, we serve homeowners throughout the

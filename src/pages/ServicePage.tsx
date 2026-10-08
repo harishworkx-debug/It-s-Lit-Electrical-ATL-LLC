@@ -28,7 +28,7 @@ export default function ServicePage() {
 
   const path = `/${service.slug}-${BUSINESS.mainLocation.toLowerCase()}`;
   const Icon = (Icons as any)[service.icon] || Icons.Zap;
-  const relatedServices = SERVICES.filter((s) => s.slug !== service.slug).slice(0, 5);
+  const relatedServices = SERVICES.filter((s) => s.slug !== service.slug);
 
   const schema = [
     ...serviceSchema(service, path),
