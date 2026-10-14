@@ -26,7 +26,7 @@ export default function Contact() {
     <>
       <SEO
         title="Contact an Atlanta Electrician | It's Lit Electrical ATL"
-        description="Contact It's Lit Electrical ATL LLC for electrical service in Atlanta, GA. Call 404-397-7984 or send us a message. Serving Atlanta and the surrounding metro area."
+        description="Contact It's Lit Electrical ATL LLC for electrical service in Atlanta, GA. Call (470) 204-4987 or send us a message. Serving Atlanta and the surrounding metro area."
         path="/contact"
         image={IMAGES.electricianPortrait}
         imageAlt="Contact It's Lit Electrical ATL LLC for electrical service in Atlanta, Georgia"

@@ -20,7 +20,7 @@ export default function Services() {
     <>
       <SEO
         title="Electrical Services in Atlanta, GA | It's Lit Electrical ATL"
-        description="Full range of residential electrical services in Atlanta, GA — panel upgrades, wiring, lighting, EV chargers, outlet repair, ceiling fans, troubleshooting & inspections. Call 404-397-7984."
+        description="Full range of residential electrical services in Atlanta, GA — panel upgrades, wiring, lighting, EV chargers, outlet repair, ceiling fans, troubleshooting & inspections. Call (470) 204-4987."
         path="/services"
         image={IMAGES.electricalPanel}
         imageAlt="Electrical services offered by It's Lit Electrical ATL LLC in Atlanta, Georgia"
@@ -112,7 +112,7 @@ export default function Services() {
 
       <CTASection
         title="Which Service Do You Need?"
-        text="Not sure which service fits your needs? Call us at 404-397-7984 and we will help you figure it out. We are happy to answer your questions."
+        text="Not sure which service fits your needs? Call us at (470) 204-4987 and we will help you figure it out. We are happy to answer your questions."
         image={IMAGES.cta}
       />
     </>

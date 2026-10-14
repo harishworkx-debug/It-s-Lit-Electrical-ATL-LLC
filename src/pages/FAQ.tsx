@@ -21,7 +21,7 @@ export default function FAQ() {
     <>
       <SEO
         title="Electrician FAQs | It's Lit Electrical ATL"
-        description="Frequently asked questions about electrical services in Atlanta, GA. Get answers about pricing, service areas, panel upgrades, EV chargers, inspections & more. Call 404-397-7984."
+        description="Frequently asked questions about electrical services in Atlanta, GA. Get answers about pricing, service areas, panel upgrades, EV chargers, inspections & more. Call (470) 204-4987."
         path="/faq"
         image={IMAGES.tools}
         imageAlt="Electrical FAQ information from It's Lit Electrical ATL LLC in Atlanta"
@@ -30,7 +30,7 @@ export default function FAQ() {
 
       <PageHero
         title="Frequently Asked Questions"
-        subtitle="Get answers to common questions about our electrical services, pricing, service areas, and more. Have a question we haven't answered? Call us at 404-397-7984."
+        subtitle="Get answers to common questions about our electrical services, pricing, service areas, and more. Have a question we haven't answered? Call us at (470) 204-4987."
         image={IMAGES.tools}
         imageAlt="Professional electrical tools and multimeter used by It's Lit Electrical ATL LLC"
         breadcrumbs={[
@@ -112,7 +112,7 @@ export default function FAQ() {
 
       <CTASection
         title="Still Have Questions?"
-        text="We are happy to answer any questions you have about your electrical needs. Call It's Lit Electrical ATL LLC at 404-397-7984 and we will help you out."
+        text="We are happy to answer any questions you have about your electrical needs. Call It's Lit Electrical ATL LLC at (470) 204-4987 and we will help you out."
         image={IMAGES.cta}
       />
     </>

@@ -44,6 +44,15 @@ const routes = [
 async function prerender() {
   console.log('🚀 Starting SSG Prerendering for 28 routes...');
   
+  // Suppress React 18 useLayoutEffect warning during SSR prerender
+  const originalError = console.error;
+  console.error = (...args) => {
+    if (typeof args[0] === 'string' && args[0].includes('useLayoutEffect does nothing on the server')) {
+      return;
+    }
+    originalError(...args);
+  };
+  
   const templatePath = path.join(distDir, 'index.html');
   if (!fs.existsSync(templatePath)) {
     throw new Error(`dist/index.html not found! Run vite build first.`);

@@ -20,7 +20,7 @@ export default function ServiceAreas() {
     <>
       <SEO
         title="Atlanta Electrical Service Areas | It's Lit Electrical ATL"
-        description="It's Lit Electrical ATL LLC serves Atlanta, GA and the surrounding metro area including Sandy Springs, Marietta, Roswell, Smyrna, Kennesaw, Decatur & more. Call 404-397-7984."
+        description="It's Lit Electrical ATL LLC serves Atlanta, GA and the surrounding metro area including Sandy Springs, Marietta, Roswell, Smyrna, Kennesaw, Decatur & more. Call (470) 204-4987."
         path="/service-areas"
         image={IMAGES.atlantaSkyline}
         imageAlt="Atlanta, Georgia metro area served by It's Lit Electrical ATL LLC"
@@ -121,7 +121,7 @@ export default function ServiceAreas() {
 
       <CTASection
         title="Don't See Your City? Call Us."
-        text="We may still serve your area. Call It's Lit Electrical ATL LLC at 404-397-7984 to find out if we can help with your electrical needs."
+        text="We may still serve your area. Call It's Lit Electrical ATL LLC at (470) 204-4987 to find out if we can help with your electrical needs."
         image={IMAGES.atlantaNight}
       />
     </>
