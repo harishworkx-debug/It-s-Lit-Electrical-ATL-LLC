@@ -1,9 +1,9 @@
 export const BUSINESS = {
   name: "It\'s Lit Electrical ATL LLC",
   shortName: "It\'s Lit Electrical ATL",
-  domain: 'https://itslitelectricalatlllc.net',
-  phone: '(470) 204-4987',
-  phoneRaw: '14702044987',
+  domain: 'https://www.itslitelectricalatlllc.net',
+  phone: '(404) 397-7984',
+  phoneRaw: '14043977984',
   email: 'info@itslitelectricalatlllc.net',
   mapsUrl: 'https://maps.app.goo.gl/NXc8DcN9xiVWkEz3A',
   mapsEmbed:
@@ -144,8 +144,8 @@ export const SERVICES: ServiceData[] = [
     tagline: 'Rapid-response emergency electrical repair in Atlanta',
     image: IMAGES.safetyGear,
     imageAlt: 'Emergency electrician arriving to fix an electrical issue in Atlanta',
-    metaTitle: 'Emergency Electrician in Atlanta, GA | It\'s Lit Electrical ATL LLC',
-    metaDescription: 'Need an emergency electrician in Atlanta, GA? It\'s Lit Electrical ATL LLC provides fast, reliable emergency electrical repairs. Call 404-397-7984.',
+    metaTitle: 'Emergency Electrician in Atlanta, GA | It\'s Lit Electrical ATL',
+    metaDescription: 'Need emergency electrical help in Atlanta? Contact It\'s Lit Electrical ATL LLC for current availability and safe next steps.',
     h1: 'Emergency Electrician in Atlanta, Georgia',
     intro: 'Electrical emergencies do not wait for a convenient time. Sparking outlets, a sudden loss of power, or a breaker that keeps tripping can be incredibly dangerous. It\'s Lit Electrical ATL LLC provides rapid-response emergency electrician services in Atlanta to keep your home and family safe when you need us most.',
     sections: [
@@ -195,7 +195,7 @@ export const SERVICES: ServiceData[] = [
     tagline: 'Reliable commercial electrical services in Atlanta',
     image: IMAGES.electricianDrill,
     imageAlt: 'Commercial electrician installing wiring in an Atlanta business',
-    metaTitle: 'Commercial Electrician in Atlanta, GA | It\'s Lit Electrical ATL LLC',
+    metaTitle: 'Commercial Electrician in Atlanta, GA | It\'s Lit Electrical ATL',
     metaDescription: 'Looking for a commercial electrician in Atlanta, GA? It\'s Lit Electrical ATL LLC provides expert electrical services for businesses, retail, and offices.',
     h1: 'Commercial Electrician in Atlanta, Georgia',
     intro: 'Your business relies on safe, dependable power to operate smoothly. Electrical downtime doesn\'t just cause inconvenience — it costs you money. It\'s Lit Electrical ATL LLC provides expert commercial electrical services in Atlanta, Georgia, helping retail stores, offices, restaurants, and light industrial facilities run efficiently and safely.',
@@ -248,9 +248,9 @@ export const SERVICES: ServiceData[] = [
     imageAlt:
       'Electrician repairing a circuit breaker panel in Atlanta, Georgia',
     metaTitle:
-      'Electrical Repair in Atlanta, GA | It\'s Lit Electrical ATL LLC',
+      'Electrical Repair in Atlanta, GA | It\'s Lit Electrical ATL',
     metaDescription:
-      'Need electrical repair in Atlanta, GA? It\'s Lit Electrical ATL LLC fixes breakers, outlets, wiring & more. Licensed electricians. Call 404-397-7984.',
+      'Looking for electrical repair in Atlanta, GA? Learn about troubleshooting and repair options, what to expect during a visit, and how to request service.',
     h1: 'Electrical Repair in Atlanta, Georgia',
     intro:
       'From flickering lights to tripping breakers, electrical problems can disrupt your daily life and pose safety risks. It\'s Lit Electrical ATL LLC provides prompt, thorough electrical repair services throughout Atlanta, Georgia, helping homeowners restore safety and comfort quickly.',
@@ -311,7 +311,7 @@ export const SERVICES: ServiceData[] = [
     imageAlt:
       'Modern residential kitchen with electrical wiring and lighting in Atlanta',
     metaTitle:
-      'Residential Electrician in Atlanta, GA | It\'s Lit Electrical ATL LLC',
+      'Residential Electrician in Atlanta, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'Looking for a residential electrician in Atlanta, GA? It\'s Lit Electrical ATL LLC handles all home electrical needs — wiring, panels, lighting, outlets & more. Call 404-397-7984.',
     h1: 'Residential Electrician in Atlanta, Georgia',
@@ -374,9 +374,9 @@ export const SERVICES: ServiceData[] = [
     imageAlt:
       'Organized circuit breaker panel with color-coded wiring ready for upgrade in Atlanta',
     metaTitle:
-      'Electrical Panel Upgrade in Atlanta, GA | It\'s Lit Electrical ATL LLC',
+      'Electrical Panel Upgrades in Atlanta, GA | It\'s Lit Electrical ATL',
     metaDescription:
-      'Upgrade your electrical panel in Atlanta, GA. It\'s Lit Electrical ATL LLC replaces outdated breaker boxes with modern 200-amp panels. Safe, code-compliant. Call 404-397-7984.',
+      'Explore electrical panel upgrade services in Atlanta, GA. Review common reasons for an upgrade, planning considerations and how to request an estimate.',
     h1: 'Electrical Panel Upgrade in Atlanta, Georgia',
     intro:
       'Your electrical panel is the heart of your home\'s electrical system. If your panel is outdated, undersized, or showing signs of wear, an upgrade is one of the most important investments you can make in your home\'s safety and functionality. It\'s Lit Electrical ATL LLC provides professional electrical panel upgrades throughout Atlanta, Georgia.',
@@ -437,7 +437,7 @@ export const SERVICES: ServiceData[] = [
     imageAlt:
       'Electrical wiring installation with green boxes and connections in an Atlanta home',
     metaTitle:
-      'Electrical Wiring in Atlanta, GA | It\'s Lit Electrical ATL LLC',
+      'Electrical Wiring in Atlanta, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'Professional electrical wiring in Atlanta, GA. It\'s Lit Electrical ATL LLC installs and replaces home wiring, including knob-and-tube and aluminum wiring removal. Call 404-397-7984.',
     h1: 'Electrical Wiring in Atlanta, Georgia',
@@ -500,7 +500,7 @@ export const SERVICES: ServiceData[] = [
     imageAlt:
       'Electrician installing a power outlet switch on a wall in Atlanta, Georgia',
     metaTitle:
-      'Outlet & Switch Repair in Atlanta, GA | It\'s Lit Electrical ATL LLC',
+      'Outlet & Switch Repair in Atlanta, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'Outlet or switch not working? It\'s Lit Electrical ATL LLC repairs and replaces outlets, switches, GFCI & AFCI in Atlanta, GA. Safe, code-compliant. Call 404-397-7984.',
     h1: 'Outlet & Switch Repair in Atlanta, Georgia',
@@ -563,7 +563,7 @@ export const SERVICES: ServiceData[] = [
     imageAlt:
       'Modern pendant lighting fixtures installed in an Atlanta home interior',
     metaTitle:
-      'Lighting Installation in Atlanta, GA | It\'s Lit Electrical ATL LLC',
+      'Lighting Installation in Atlanta, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'Lighting installation in Atlanta, GA. It\'s Lit Electrical ATL LLC installs recessed lighting, pendant lights, chandeliers, outdoor & landscape lighting. Call 404-397-7984.',
     h1: 'Lighting Installation in Atlanta, Georgia',
@@ -626,7 +626,7 @@ export const SERVICES: ServiceData[] = [
     imageAlt:
       'Modern wooden ceiling fan installed in an Atlanta home interior',
     metaTitle:
-      'Ceiling Fan Installation in Atlanta, GA | It\'s Lit Electrical ATL LLC',
+      'Ceiling Fan Installation in Atlanta, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'Ceiling fan installation in Atlanta, GA. It\'s Lit Electrical ATL LLC safely installs ceiling fans, replaces existing fixtures, and upgrades ceiling boxes. Call 404-397-7984.',
     h1: 'Ceiling Fan Installation in Atlanta, Georgia',
@@ -689,7 +689,7 @@ export const SERVICES: ServiceData[] = [
     imageAlt:
       'Electric vehicle charging at a home charging station in Atlanta, Georgia',
     metaTitle:
-      'EV Charger Installation in Atlanta, GA | It\'s Lit Electrical ATL LLC',
+      'EV Charger Installation in Atlanta, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'EV charger installation in Atlanta, GA. It\'s Lit Electrical ATL LLC installs Level 2 home EV charging stations with dedicated circuits. Safe, code-compliant. Call 404-397-7984.',
     h1: 'EV Charger Installation in Atlanta, Georgia',
@@ -752,7 +752,7 @@ export const SERVICES: ServiceData[] = [
     imageAlt:
       'Electrician using a multimeter to troubleshoot electrical issues in Atlanta',
     metaTitle:
-      'Electrical Troubleshooting in Atlanta, GA | It\'s Lit Electrical ATL LLC',
+      'Electrical Troubleshooting in Atlanta, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'Electrical troubleshooting in Atlanta, GA. It\'s Lit Electrical ATL LLC diagnoses flickering lights, tripping breakers, dead outlets & more. Call 404-397-7984.',
     h1: 'Electrical Troubleshooting in Atlanta, Georgia',
@@ -815,7 +815,7 @@ export const SERVICES: ServiceData[] = [
     imageAlt:
       'Professional electrician inspecting electrical equipment for safety in Atlanta',
     metaTitle:
-      'Electrical Inspection in Atlanta, GA | It\'s Lit Electrical ATL LLC',
+      'Electrical Inspection in Atlanta, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'Electrical inspection in Atlanta, GA. It\'s Lit Electrical ATL LLC provides thorough home electrical safety inspections. Identify hazards before they become problems. Call 404-397-7984.',
     h1: 'Electrical Inspection in Atlanta, Georgia',
@@ -900,7 +900,7 @@ export const LOCATIONS: LocationData[] = [
     image: IMAGES.electricalPanel,
     imageAlt: 'Electrical panel upgrade work in Sandy Springs, Georgia',
     metaTitle:
-      'Electrician in Sandy Springs, GA | It\'s Lit Electrical ATL LLC',
+      'Electrician in Sandy Springs, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'Need an electrician in Sandy Springs, GA? It\'s Lit Electrical ATL LLC specializes in electrical panel upgrades and residential electrical service. Call 404-397-7984.',
     h1: 'Electrician in Sandy Springs, Georgia',
@@ -950,9 +950,9 @@ export const LOCATIONS: LocationData[] = [
     primaryService: 'electrical-wiring',
     image: IMAGES.wiring,
     imageAlt: 'Electrical wiring installation work in Marietta, Georgia',
-    metaTitle: 'Electrician in Marietta, GA | It\'s Lit Electrical ATL LLC',
+    metaTitle: 'Electrician in Marietta, GA | It\'s Lit Electrical ATL',
     metaDescription:
-      'Need an electrician in Marietta, GA? It\'s Lit Electrical ATL LLC specializes in electrical wiring and rewiring for homes. Historic and new construction. Call 404-397-7984.',
+      'Need an electrician serving Marietta, GA? Review the electrical services available in this area, local project information and how to request an estimate.',
     h1: 'Electrician in Marietta, Georgia',
     intro:
       'Marietta combines historic Southern charm with modern growth, and its homes reflect that mix — from antebellum-era properties near the Square to new builds in East Cobb. It\'s Lit Electrical ATL LLC serves Marietta homeowners with expert electrical wiring services, including whole-home rewiring for older properties and new wiring for additions and remodels.',
@@ -1000,7 +1000,7 @@ export const LOCATIONS: LocationData[] = [
     primaryService: 'lighting-installation',
     image: IMAGES.lighting,
     imageAlt: 'Professional lighting installation in a Roswell, Georgia home',
-    metaTitle: 'Electrician in Roswell, GA | It\'s Lit Electrical ATL LLC',
+    metaTitle: 'Electrician in Roswell, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'Need an electrician in Roswell, GA? It\'s Lit Electrical ATL LLC specializes in lighting installation — recessed, pendant, outdoor & landscape. Call 404-397-7984.',
     h1: 'Electrician in Roswell, Georgia',
@@ -1050,7 +1050,7 @@ export const LOCATIONS: LocationData[] = [
     primaryService: 'outlet-switch-repair',
     image: IMAGES.outlet,
     imageAlt: 'Outlet and switch repair work in Smyrna, Georgia',
-    metaTitle: 'Electrician in Smyrna, GA | It\'s Lit Electrical ATL LLC',
+    metaTitle: 'Electrician in Smyrna, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'Need an electrician in Smyrna, GA? It\'s Lit Electrical ATL LLC specializes in outlet and switch repair, GFCI & AFCI protection. Safe, code-compliant. Call 404-397-7984.',
     h1: 'Electrician in Smyrna, Georgia',
@@ -1100,7 +1100,7 @@ export const LOCATIONS: LocationData[] = [
     primaryService: 'ceiling-fan-installation',
     image: IMAGES.ceilingFan,
     imageAlt: 'Ceiling fan installation work in Kennesaw, Georgia',
-    metaTitle: 'Electrician in Kennesaw, GA | It\'s Lit Electrical ATL LLC',
+    metaTitle: 'Electrician in Kennesaw, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'Need an electrician in Kennesaw, GA? It\'s Lit Electrical ATL LLC specializes in ceiling fan installation with fan-rated boxes. Indoor & outdoor. Call 404-397-7984.',
     h1: 'Electrician in Kennesaw, Georgia',
@@ -1150,7 +1150,7 @@ export const LOCATIONS: LocationData[] = [
     primaryService: 'ev-charger-installation',
     image: IMAGES.evCharger,
     imageAlt: 'EV charger installation in Decatur, Georgia',
-    metaTitle: 'Electrician in Decatur, GA | It\'s Lit Electrical ATL LLC',
+    metaTitle: 'Electrician in Decatur, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'Need an electrician in Decatur, GA? It\'s Lit Electrical ATL LLC specializes in EV charger installation. Level 2 home charging stations. Call 404-397-7984.',
     h1: 'Electrician in Decatur, Georgia',
@@ -1200,7 +1200,7 @@ export const LOCATIONS: LocationData[] = [
     primaryService: 'electrical-troubleshooting',
     image: IMAGES.troubleshooting,
     imageAlt: 'Electrical troubleshooting work in Mableton, Georgia',
-    metaTitle: 'Electrician in Mableton, GA | It\'s Lit Electrical ATL LLC',
+    metaTitle: 'Electrician in Mableton, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'Need an electrician in Mableton, GA? It\'s Lit Electrical ATL LLC specializes in electrical troubleshooting. Diagnose flickering lights, tripping breakers & more. Call 404-397-7984.',
     h1: 'Electrician in Mableton, Georgia',
@@ -1250,7 +1250,7 @@ export const LOCATIONS: LocationData[] = [
     primaryService: 'electrical-inspection',
     image: IMAGES.inspection,
     imageAlt: 'Electrical safety inspection in Powder Springs, Georgia',
-    metaTitle: 'Electrician in Powder Springs, GA | It\'s Lit Electrical ATL LLC',
+    metaTitle: 'Electrician in Powder Springs, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'Need an electrician in Powder Springs, GA? It\'s Lit Electrical ATL LLC specializes in electrical safety inspections. Identify hazards early. Call 404-397-7984.',
     h1: 'Electrician in Powder Springs, Georgia',
@@ -1300,7 +1300,7 @@ export const LOCATIONS: LocationData[] = [
     primaryService: 'electrical-repair',
     image: IMAGES.repair,
     imageAlt: 'Electrical repair work in Austell, Georgia',
-    metaTitle: 'Electrician in Austell, GA | It\'s Lit Electrical ATL LLC',
+    metaTitle: 'Electrician in Austell, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'Need an electrician in Austell, GA? It\'s Lit Electrical ATL LLC specializes in electrical repair — breakers, outlets, wiring & more. Fast, safe service. Call 404-397-7984.',
     h1: 'Electrician in Austell, Georgia',
@@ -1350,7 +1350,7 @@ export const LOCATIONS: LocationData[] = [
     primaryService: 'residential-electrician',
     image: IMAGES.residential,
     imageAlt: 'Residential electrician service in Tucker, Georgia',
-    metaTitle: 'Electrician in Tucker, GA | It\'s Lit Electrical ATL LLC',
+    metaTitle: 'Electrician in Tucker, GA | It\'s Lit Electrical ATL',
     metaDescription:
       'Need an electrician in Tucker, GA? It\'s Lit Electrical ATL LLC is your full-service residential electrician — wiring, panels, lighting, outlets & more. Call 404-397-7984.',
     h1: 'Electrician in Tucker, Georgia',

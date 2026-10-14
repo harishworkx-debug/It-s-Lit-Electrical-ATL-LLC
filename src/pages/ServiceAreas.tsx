@@ -19,7 +19,7 @@ export default function ServiceAreas() {
   return (
     <>
       <SEO
-        title="Service Areas | It's Lit Electrical ATL LLC — Atlanta Metro Electrician"
+        title="Atlanta Electrical Service Areas | It's Lit Electrical ATL"
         description="It's Lit Electrical ATL LLC serves Atlanta, GA and the surrounding metro area including Sandy Springs, Marietta, Roswell, Smyrna, Kennesaw, Decatur & more. Call 404-397-7984."
         path="/service-areas"
         image={IMAGES.atlantaSkyline}

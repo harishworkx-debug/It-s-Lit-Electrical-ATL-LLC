@@ -69,8 +69,8 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="It's Lit Electrical ATL LLC | Electrician in Atlanta, Georgia"
-        description="It's Lit Electrical ATL LLC is your trusted electrician in Atlanta, Georgia. Expert residential electrical repairs, panel upgrades, wiring, lighting, EV chargers & more. Call 404-397-7984."
+        title="Electrician in Atlanta, GA | It's Lit Electrical ATL"
+        description="Need an electrician in Atlanta, GA? It's Lit Electrical ATL LLC provides electrical service for homes and businesses. Call for service details and an estimate."
         path="/"
         image={IMAGES.hero}
         imageAlt={IMAGES.heroAlt}

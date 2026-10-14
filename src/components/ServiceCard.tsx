@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import * as Icons from 'lucide-react';
+import ServiceIcon from './ServiceIcon';
 import { BUSINESS, ServiceData } from '@/data/siteData';
 import Reveal from './Reveal';
 
 export default function ServiceCard({ service }: { service: ServiceData }) {
-  const Icon = (Icons as any)[service.icon] || Icons.Zap;
+
 
   return (
     <Reveal>
@@ -22,7 +22,7 @@ export default function ServiceCard({ service }: { service: ServiceData }) {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-secondary-950/80 to-transparent" />
           <div className="absolute bottom-3 left-3 w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center shadow-lg">
-            <Icon className="w-6 h-6 text-secondary-950" />
+            <ServiceIcon name={service.icon} className="w-6 h-6 text-secondary-950" />
           </div>
         </div>
         <div className="p-6">

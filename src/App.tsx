@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useParams, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from '@/components/Layout';
 import Home from '@/pages/Home';
@@ -9,11 +9,9 @@ import ServiceAreas from '@/pages/ServiceAreas';
 import LocationPage from '@/pages/LocationPage';
 import Contact from '@/pages/Contact';
 import FAQ from '@/pages/FAQ';
-
-import { useParams, Navigate } from 'react-router-dom';
 import { SERVICES, LOCATIONS, BUSINESS } from '@/data/siteData';
 
-const DynamicRoute = () => {
+export const DynamicRoute = () => {
   const { slug } = useParams();
   const isService = SERVICES.some(s => `${s.slug}-${BUSINESS.mainLocation.toLowerCase()}` === slug);
   const isLocation = LOCATIONS.some(l => l.slug === slug);
@@ -24,22 +22,28 @@ const DynamicRoute = () => {
   return <Navigate to="/" replace />;
 };
 
+export function AppRoutes() {
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/service-areas" element={<ServiceAreas />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/:slug" element={<DynamicRoute />} />
+        <Route path="*" element={<Home />} />
+      </Route>
+    </Routes>
+  );
+}
+
 export default function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/service-areas" element={<ServiceAreas />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/:slug" element={<DynamicRoute />} />
-            <Route path="*" element={<Home />} />
-          </Route>
-        </Routes>
+        <AppRoutes />
       </BrowserRouter>
     </HelmetProvider>
   );

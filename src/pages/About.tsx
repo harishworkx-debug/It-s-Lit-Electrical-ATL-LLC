@@ -62,7 +62,7 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About Us | It's Lit Electrical ATL LLC — Atlanta Electrician"
+        title="About It's Lit Electrical ATL LLC | Atlanta, GA"
         description="Learn about It's Lit Electrical ATL LLC, your trusted electrical contractor in Atlanta, Georgia. Professional residential electrical services with a commitment to safety and quality."
         path="/about"
         image={IMAGES.electricianPortrait}

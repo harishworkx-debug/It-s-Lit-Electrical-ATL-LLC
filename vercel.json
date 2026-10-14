@@ -1,10 +1,24 @@
 {
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "itslitelectricalatlllc.net"
+        }
+      ],
+      "destination": "https://www.itslitelectricalatlllc.net/$1",
+      "permanent": true
+    }
+  ],
   "routes": [
     {
       "handle": "filesystem"
     },
     {
-      "src": "/.*",
+      "src": "/(.*)",
       "dest": "/index.html"
     }
   ]

@@ -19,7 +19,7 @@ export default function Services() {
   return (
     <>
       <SEO
-        title="Electrical Services in Atlanta, GA | It's Lit Electrical ATL LLC"
+        title="Electrical Services in Atlanta, GA | It's Lit Electrical ATL"
         description="Full range of residential electrical services in Atlanta, GA — panel upgrades, wiring, lighting, EV chargers, outlet repair, ceiling fans, troubleshooting & inspections. Call 404-397-7984."
         path="/services"
         image={IMAGES.electricalPanel}

@@ -44,7 +44,7 @@ export function localBusinessSchema() {
       })),
     },
     openingHoursSpecification: BUSINESS.hours
-      .filter((h) => h.hours !== 'By Appointment')
+      .filter((h) => (h.hours as string) !== 'By Appointment')
       .map((h) => {
         const is24Hours = h.hours.toLowerCase().includes('24 hours');
         if (is24Hours) {

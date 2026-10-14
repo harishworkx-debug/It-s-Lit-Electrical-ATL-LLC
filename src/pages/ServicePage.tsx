@@ -6,13 +6,13 @@ import {
   Zap,
   ChevronRight,
 } from 'lucide-react';
-import * as Icons from 'lucide-react';
 import SEO from '@/components/SEO';
 import PageHero from '@/components/PageHero';
 import Reveal from '@/components/Reveal';
 import FAQAccordion from '@/components/FAQAccordion';
 import CTASection from '@/components/CTASection';
 import ServiceCard from '@/components/ServiceCard';
+import ServiceIcon from '@/components/ServiceIcon';
 import { BUSINESS, IMAGES, SERVICES } from '@/data/siteData';
 import { serviceSchema, breadcrumbSchema } from '@/data/schema';
 
@@ -27,7 +27,6 @@ export default function ServicePage() {
   }
 
   const path = `/${service.slug}-${BUSINESS.mainLocation.toLowerCase()}`;
-  const Icon = (Icons as any)[service.icon] || Icons.Zap;
   const relatedServices = SERVICES.filter((s) => s.slug !== service.slug);
 
   const schema = [
@@ -69,7 +68,7 @@ export default function ServicePage() {
             <div className="lg:col-span-2">
               <Reveal>
                 <div className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 rounded-full px-4 py-1.5 text-sm font-semibold mb-6">
-                  <Icon className="w-4 h-4" />
+                  <ServiceIcon name={service.icon} className="w-4 h-4" />
                   {service.name}
                 </div>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-secondary-900 leading-tight">

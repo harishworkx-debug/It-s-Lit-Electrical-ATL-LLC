@@ -20,7 +20,7 @@ export default function FAQ() {
   return (
     <>
       <SEO
-        title="FAQ | It's Lit Electrical ATL LLC — Atlanta Electrician FAQs"
+        title="Electrician FAQs | It's Lit Electrical ATL"
         description="Frequently asked questions about electrical services in Atlanta, GA. Get answers about pricing, service areas, panel upgrades, EV chargers, inspections & more. Call 404-397-7984."
         path="/faq"
         image={IMAGES.tools}

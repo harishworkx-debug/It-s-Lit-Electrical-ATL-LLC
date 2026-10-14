@@ -6,14 +6,15 @@ import {
   MapPin,
   Zap,
   ChevronRight,
+  Star,
 } from 'lucide-react';
-import * as Icons from 'lucide-react';
 import SEO from '@/components/SEO';
 import PageHero from '@/components/PageHero';
 import Reveal from '@/components/Reveal';
 import FAQAccordion from '@/components/FAQAccordion';
 import CTASection from '@/components/CTASection';
 import LocationCard from '@/components/LocationCard';
+import ServiceIcon from '@/components/ServiceIcon';
 import { BUSINESS, IMAGES, SERVICES, LOCATIONS, LocationData, REVIEWS } from '@/data/siteData';
 import { locationSchema, breadcrumbSchema } from '@/data/schema';
 
@@ -29,7 +30,6 @@ export default function LocationPage() {
 
   const path = `/${location.slug}`;
   const primaryService = SERVICES.find((s) => s.slug === location.primaryService);
-  const Icon = primaryService ? ((Icons as any)[primaryService.icon] || Icons.Zap) : Icons.Zap;
   const otherLocations = LOCATIONS.filter((l) => l.slug !== location.slug).slice(0, 5);
 
   const schema = [
@@ -75,7 +75,7 @@ export default function LocationPage() {
             <div className="lg:col-span-2">
               <Reveal>
                 <div className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 rounded-full px-4 py-1.5 text-sm font-semibold mb-6">
-                  <Icon className="w-4 h-4" />
+                  <ServiceIcon name={primaryService?.icon || 'Zap'} className="w-4 h-4" />
                   {primaryService?.name} in {location.name}
                 </div>
                 <p className="text-secondary-600 mt-4 leading-relaxed text-lg">
@@ -176,7 +176,6 @@ export default function LocationPage() {
                   
                   <div className="grid sm:grid-cols-2 gap-6">
                     {SERVICES.map((service, index) => {
-                      const ServiceIcon = (Icons as any)[service.icon] || Icons.Zap;
                       return (
                         <Link 
                           key={index}
@@ -184,7 +183,7 @@ export default function LocationPage() {
                           className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-secondary-100 flex gap-4 items-start group"
                         >
                           <div className="w-12 h-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center shrink-0 group-hover:bg-primary-500 group-hover:text-secondary-950 transition-colors">
-                            <ServiceIcon className="w-6 h-6" />
+                            <ServiceIcon name={service.icon} className="w-6 h-6" />
                           </div>
                           <div>
                             <h3 className="font-bold text-secondary-900 mb-1 group-hover:text-primary-600 transition-colors">
@@ -214,7 +213,7 @@ export default function LocationPage() {
                   <div className="bg-secondary-800 p-6 sm:p-8 rounded-2xl border border-secondary-700">
                     <div className="flex gap-1 mb-4">
                       {[1, 2, 3, 4, 5].map((star) => (
-                        <Icons.Star
+                        <Star
                           key={star}
                           className="w-5 h-5 fill-primary-500 text-primary-500"
                         />
