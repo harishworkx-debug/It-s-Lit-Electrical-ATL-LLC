@@ -1,10 +1,11 @@
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Phone, Mail, MapPin, Clock, Send, ArrowRight, Zap } from 'lucide-react';
 import { useState } from 'react';
 import SEO from '@/components/SEO';
 import PageHero from '@/components/PageHero';
 import Reveal from '@/components/Reveal';
 import CallButton from '@/components/CallButton';
-import { BUSINESS, IMAGES } from '@/data/siteData';
+import { BUSINESS, IMAGES, SERVICES, LOCATIONS } from '@/data/siteData';
 import { breadcrumbSchema, localBusinessSchema } from '@/data/schema';
 
 export default function Contact() {
@@ -215,6 +216,73 @@ export default function Contact() {
                 )}
               </div>
             </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Services & Areas Navigation */}
+      <section className="py-12 bg-secondary-50 border-t border-b border-secondary-100">
+        <div className="container-x">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-secondary-100">
+              <div className="flex items-center gap-2 mb-4">
+                <Zap className="w-5 h-5 text-primary-500" />
+                <h3 className="font-heading font-bold text-lg text-secondary-900">
+                  Looking For a Specific Service?
+                </h3>
+              </div>
+              <p className="text-secondary-600 text-sm mb-4">
+                We handle all residential and commercial electrical projects across metro Atlanta:
+              </p>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                {SERVICES.slice(0, 8).map((s) => (
+                  <Link
+                    key={s.slug}
+                    to={`/${s.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
+                    className="text-secondary-700 hover:text-primary-600 font-medium py-1 truncate"
+                  >
+                    • {s.name}
+                  </Link>
+                ))}
+              </div>
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-1 mt-4 text-primary-600 font-bold text-sm hover:text-primary-700"
+              >
+                View All Electrical Services
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-secondary-100">
+              <div className="flex items-center gap-2 mb-4">
+                <MapPin className="w-5 h-5 text-primary-500" />
+                <h3 className="font-heading font-bold text-lg text-secondary-900">
+                  Check Service in Your City
+                </h3>
+              </div>
+              <p className="text-secondary-600 text-sm mb-4">
+                Our electricians are dispatched across greater Atlanta communities daily:
+              </p>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                {LOCATIONS.map((l) => (
+                  <Link
+                    key={l.slug}
+                    to={`/${l.slug}`}
+                    className="text-secondary-700 hover:text-primary-600 font-medium py-1 truncate"
+                  >
+                    • Electrician in {l.name}
+                  </Link>
+                ))}
+              </div>
+              <Link
+                to="/service-areas"
+                className="inline-flex items-center gap-1 mt-4 text-primary-600 font-bold text-sm hover:text-primary-700"
+              >
+                View All Service Areas
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { Phone, ArrowRight, HelpCircle } from 'lucide-react';
+import { Phone, ArrowRight, HelpCircle, MapPin } from 'lucide-react';
 import SEO from '@/components/SEO';
 import PageHero from '@/components/PageHero';
 import Reveal from '@/components/Reveal';
 import FAQAccordion from '@/components/FAQAccordion';
 import CTASection from '@/components/CTASection';
-import { BUSINESS, IMAGES, GENERAL_FAQS, SERVICES } from '@/data/siteData';
+import { BUSINESS, IMAGES, GENERAL_FAQS, SERVICES, LOCATIONS } from '@/data/siteData';
 import { faqSchema, breadcrumbSchema } from '@/data/schema';
 
 export default function FAQ() {
@@ -106,6 +106,49 @@ export default function FAQ() {
                 </span>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Local Coverage FAQs & Links */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="container-x">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 rounded-full px-4 py-1.5 text-sm font-semibold mb-4">
+              Local Service Areas
+            </div>
+            <h2 className="section-title">Common Questions by City</h2>
+            <p className="section-subtitle mx-auto">
+              Looking for electrical service FAQs in a specific metro Atlanta community? Visit your city page for local emergency info, permit details, and answers.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {LOCATIONS.map((loc) => (
+              <Link
+                key={loc.slug}
+                to={`/${loc.slug}`}
+                className="group flex items-center gap-3 bg-secondary-50 hover:bg-primary-50 p-4 rounded-xl border border-secondary-100 transition-all hover:shadow-sm"
+              >
+                <div className="w-9 h-9 bg-primary-100 group-hover:bg-primary-500 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
+                  <MapPin className="w-5 h-5 text-primary-700 group-hover:text-secondary-950 transition-colors" />
+                </div>
+                <div>
+                  <div className="font-bold text-secondary-900 group-hover:text-primary-700 transition-colors text-sm">
+                    {loc.name}
+                  </div>
+                  <div className="text-xs text-secondary-500">{loc.name} FAQs</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              to="/service-areas"
+              className="inline-flex items-center gap-2 text-primary-600 font-bold hover:text-primary-700 transition-colors"
+            >
+              View All Service Areas
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>

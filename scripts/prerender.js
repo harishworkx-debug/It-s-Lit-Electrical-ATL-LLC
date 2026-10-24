@@ -15,6 +15,7 @@ const routes = [
   '/service-areas',
   '/contact',
   '/faq',
+  '/sitemap',
   // 12 core services
   '/electrical-repair-atlanta',
   '/residential-electrician-atlanta',
@@ -42,7 +43,7 @@ const routes = [
 ];
 
 async function prerender() {
-  console.log('🚀 Starting SSG Prerendering for 28 routes...');
+  console.log(`🚀 Starting SSG Prerendering for ${routes.length} routes...`);
   
   // Suppress React 18 useLayoutEffect warning during SSR prerender
   const originalError = console.error;

@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { MapPin, ArrowRight, Phone } from 'lucide-react';
+import { MapPin, ArrowRight, Phone, Zap } from 'lucide-react';
 import SEO from '@/components/SEO';
 import PageHero from '@/components/PageHero';
 import Reveal from '@/components/Reveal';
 import LocationCard from '@/components/LocationCard';
 import CTASection from '@/components/CTASection';
-import { BUSINESS, IMAGES, LOCATIONS } from '@/data/siteData';
+import { BUSINESS, IMAGES, LOCATIONS, SERVICES } from '@/data/siteData';
 import { breadcrumbSchema } from '@/data/schema';
 
 export default function ServiceAreas() {
@@ -115,6 +115,49 @@ export default function ServiceAreas() {
                 />
               </div>
             </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Available Across All Service Areas */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="container-x">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 rounded-full px-4 py-1.5 text-sm font-semibold mb-4">
+              Comprehensive Services
+            </div>
+            <h2 className="section-title">Electrical Services Available in All Our Areas</h2>
+            <p className="section-subtitle mx-auto">
+              No matter where you are located in metro Atlanta, we provide full electrical repair, panel upgrades, rewiring, lighting, and emergency services.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {SERVICES.map((s) => (
+              <Link
+                key={s.slug}
+                to={`/${s.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
+                className="group flex items-center gap-3 bg-secondary-50 hover:bg-primary-50 p-4 rounded-xl border border-secondary-100 transition-all hover:shadow-sm"
+              >
+                <div className="w-9 h-9 bg-primary-100 group-hover:bg-primary-500 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
+                  <Zap className="w-5 h-5 text-primary-700 group-hover:text-secondary-950 transition-colors" />
+                </div>
+                <div>
+                  <div className="font-bold text-secondary-900 group-hover:text-primary-700 transition-colors text-sm">
+                    {s.name}
+                  </div>
+                  <div className="text-xs text-secondary-500">Learn more</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 text-primary-600 font-bold hover:text-primary-700 transition-colors"
+            >
+              View Detailed Electrical Services
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>

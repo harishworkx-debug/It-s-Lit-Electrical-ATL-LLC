@@ -84,73 +84,83 @@ export default function Header() {
               </Link>
 
               {/* Services dropdown */}
-              <div
-                className="relative"
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
-              >
-                <button className="flex items-center gap-1 px-3 py-2 font-semibold text-white hover:text-primary-400 transition-colors">
+              <div className="relative group">
+                <Link
+                  to="/services"
+                  className={`flex items-center gap-1 px-3 py-2 font-semibold transition-colors ${
+                    location.pathname.startsWith('/electrical-') ||
+                    location.pathname.startsWith('/residential-') ||
+                    location.pathname.startsWith('/outlet-') ||
+                    location.pathname.startsWith('/lighting-') ||
+                    location.pathname.startsWith('/ceiling-') ||
+                    location.pathname.startsWith('/ev-') ||
+                    location.pathname.startsWith('/emergency-') ||
+                    location.pathname.startsWith('/commercial-') ||
+                    location.pathname === '/services'
+                      ? 'text-primary-400'
+                      : 'text-white hover:text-primary-400'
+                  }`}
+                >
                   Services
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-                {servicesOpen && (
-                  <div className="absolute top-full left-0 pt-2 w-64 z-50">
-                    <div className="bg-white rounded-xl shadow-2xl border border-secondary-100 overflow-hidden">
-                      <Link
-                        to="/services"
-                        className="block px-4 py-3 font-bold text-secondary-900 hover:bg-primary-50 hover:text-primary-700 border-b border-secondary-100 transition-colors"
-                      >
-                        All Electrical Services
-                      </Link>
-                      <div className="max-h-96 overflow-y-auto">
-                        {SERVICES.map((s) => (
-                          <Link
-                            key={s.slug}
-                            to={`/${s.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
-                            className="block px-4 py-2.5 text-sm text-secondary-600 hover:bg-primary-50 hover:text-primary-700 transition-colors"
-                          >
-                            {s.name}
-                          </Link>
-                        ))}
-                      </div>
+                  <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                </Link>
+                <div className="absolute top-full left-0 pt-2 w-64 z-50 opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:visible group-focus-within:pointer-events-auto transition-all duration-200">
+                  <div className="bg-white rounded-xl shadow-2xl border border-secondary-100 overflow-hidden">
+                    <Link
+                      to="/services"
+                      className="block px-4 py-3 font-bold text-secondary-900 hover:bg-primary-50 hover:text-primary-700 border-b border-secondary-100 transition-colors"
+                    >
+                      All Electrical Services
+                    </Link>
+                    <div className="max-h-96 overflow-y-auto">
+                      {SERVICES.map((s) => (
+                        <Link
+                          key={s.slug}
+                          to={`/${s.slug}-${BUSINESS.mainLocation.toLowerCase()}`}
+                          className="block px-4 py-2.5 text-sm text-secondary-600 hover:bg-primary-50 hover:text-primary-700 transition-colors"
+                        >
+                          {s.name}
+                        </Link>
+                      ))}
                     </div>
                   </div>
-                )}
+                </div>
               </div>
 
               {/* Service Areas dropdown */}
-              <div
-                className="relative"
-                onMouseEnter={() => setAreasOpen(true)}
-                onMouseLeave={() => setAreasOpen(false)}
-              >
-                <button className="flex items-center gap-1 px-3 py-2 font-semibold text-white hover:text-primary-400 transition-colors">
+              <div className="relative group">
+                <Link
+                  to="/service-areas"
+                  className={`flex items-center gap-1 px-3 py-2 font-semibold transition-colors ${
+                    location.pathname.startsWith('/electrician-') || location.pathname === '/service-areas'
+                      ? 'text-primary-400'
+                      : 'text-white hover:text-primary-400'
+                  }`}
+                >
                   Service Areas
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-                {areasOpen && (
-                  <div className="absolute top-full left-0 pt-2 w-56 z-50">
-                    <div className="bg-white rounded-xl shadow-2xl border border-secondary-100 overflow-hidden">
-                      <Link
-                        to="/service-areas"
-                        className="block px-4 py-3 font-bold text-secondary-900 hover:bg-primary-50 hover:text-primary-700 border-b border-secondary-100 transition-colors"
-                      >
-                        All Service Areas
-                      </Link>
-                      <div className="max-h-96 overflow-y-auto">
-                        {LOCATIONS.map((l) => (
-                          <Link
-                            key={l.slug}
-                            to={`/${l.slug}`}
-                            className="block px-4 py-2.5 text-sm text-secondary-600 hover:bg-primary-50 hover:text-primary-700 transition-colors"
-                          >
-                            {l.name}
-                          </Link>
-                        ))}
-                      </div>
+                  <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                </Link>
+                <div className="absolute top-full left-0 pt-2 w-56 z-50 opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:visible group-focus-within:pointer-events-auto transition-all duration-200">
+                  <div className="bg-white rounded-xl shadow-2xl border border-secondary-100 overflow-hidden">
+                    <Link
+                      to="/service-areas"
+                      className="block px-4 py-3 font-bold text-secondary-900 hover:bg-primary-50 hover:text-primary-700 border-b border-secondary-100 transition-colors"
+                    >
+                      All Service Areas
+                    </Link>
+                    <div className="max-h-96 overflow-y-auto">
+                      {LOCATIONS.map((l) => (
+                        <Link
+                          key={l.slug}
+                          to={`/${l.slug}`}
+                          className="block px-4 py-2.5 text-sm text-secondary-600 hover:bg-primary-50 hover:text-primary-700 transition-colors"
+                        >
+                          {l.name}
+                        </Link>
+                      ))}
                     </div>
                   </div>
-                )}
+                </div>
               </div>
 
               <Link to="/faq" className={`px-3 py-2 font-semibold transition-colors ${isActive('/faq')}`}>

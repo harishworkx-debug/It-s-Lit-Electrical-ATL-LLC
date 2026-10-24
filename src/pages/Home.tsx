@@ -53,14 +53,14 @@ const WHY_CHOOSE = [
 ];
 
 const RESIDENTIAL_SERVICES = [
-  'Electrical panel upgrades',
-  'Whole-home and partial rewiring',
-  'Recessed and LED lighting installation',
-  'Outlet and switch repair',
-  'Ceiling fan installation',
-  'EV charger installation',
-  'GFCI and AFCI protection',
-  'Electrical safety inspections',
+  { name: 'Electrical panel upgrades', path: '/electrical-panel-upgrade-atlanta' },
+  { name: 'Whole-home and partial rewiring', path: '/electrical-wiring-atlanta' },
+  { name: 'Recessed and LED lighting installation', path: '/lighting-installation-atlanta' },
+  { name: 'Outlet and switch repair', path: '/outlet-switch-repair-atlanta' },
+  { name: 'Ceiling fan installation', path: '/ceiling-fan-installation-atlanta' },
+  { name: 'EV charger installation', path: '/ev-charger-installation-atlanta' },
+  { name: 'GFCI and AFCI protection', path: '/outlet-switch-repair-atlanta' },
+  { name: 'Electrical safety inspections', path: '/electrical-inspection-atlanta' },
 ];
 
 export default function Home() {
@@ -348,9 +348,14 @@ export default function Home() {
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
                   {RESIDENTIAL_SERVICES.map((item) => (
-                    <div key={item} className="flex items-center gap-2">
+                    <div key={item.name} className="flex items-center gap-2">
                       <CheckCircle2 className="w-5 h-5 text-primary-500 flex-shrink-0" />
-                      <span className="text-secondary-700 text-sm">{item}</span>
+                      <Link
+                        to={item.path}
+                        className="text-secondary-700 hover:text-primary-600 transition-colors text-sm hover:underline"
+                      >
+                        {item.name}
+                      </Link>
                     </div>
                   ))}
                 </div>
@@ -387,15 +392,20 @@ export default function Home() {
                 </p>
                 <div className="space-y-3 mt-6">
                   {[
-                    'Breaker tripping and panel issues',
-                    'Dead or sparking outlets',
-                    'Flickering or dimming lights',
-                    'GFCI and AFCI device failures',
-                    'Switch repair and replacement',
+                    { label: 'Breaker tripping and panel issues', path: '/electrical-panel-upgrade-atlanta' },
+                    { label: 'Dead or sparking outlets', path: '/outlet-switch-repair-atlanta' },
+                    { label: 'Flickering or dimming lights', path: '/lighting-installation-atlanta' },
+                    { label: 'GFCI and AFCI device failures', path: '/electrical-repair-atlanta' },
+                    { label: 'Switch repair and replacement', path: '/outlet-switch-repair-atlanta' },
                   ].map((item) => (
-                    <div key={item} className="flex items-center gap-2">
+                    <div key={item.label} className="flex items-center gap-2">
                       <Wrench className="w-5 h-5 text-primary-500 flex-shrink-0" />
-                      <span className="text-secondary-700">{item}</span>
+                      <Link
+                        to={item.path}
+                        className="text-secondary-700 hover:text-primary-600 transition-colors hover:underline"
+                      >
+                        {item.label}
+                      </Link>
                     </div>
                   ))}
                 </div>
@@ -438,17 +448,21 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {[
-              { img: IMAGES.electricalPanel, alt: 'Organized circuit breaker panel after upgrade in Atlanta', label: 'Panel Upgrade' },
-              { img: IMAGES.wiring, alt: 'New electrical wiring installation in Atlanta home', label: 'Wiring Installation' },
-              { img: IMAGES.lighting, alt: 'Modern lighting fixtures installed in Atlanta home', label: 'Lighting Installation' },
-              { img: IMAGES.evCharger, alt: 'Home EV charging station installed in Atlanta', label: 'EV Charger' },
-              { img: IMAGES.ceilingFan, alt: 'Ceiling fan installed by Atlanta electrician', label: 'Ceiling Fan' },
-              { img: IMAGES.outlet, alt: 'Outlet and switch repair in Atlanta home', label: 'Outlet Repair' },
-              { img: IMAGES.inspection, alt: 'Electrical safety inspection in Atlanta', label: 'Safety Inspection' },
-              { img: IMAGES.troubleshooting, alt: 'Electrician troubleshooting electrical issues in Atlanta', label: 'Troubleshooting' },
+              { img: IMAGES.electricalPanel, alt: 'Organized circuit breaker panel after upgrade in Atlanta', label: 'Panel Upgrade', path: '/electrical-panel-upgrade-atlanta' },
+              { img: IMAGES.wiring, alt: 'New electrical wiring installation in Atlanta home', label: 'Wiring Installation', path: '/electrical-wiring-atlanta' },
+              { img: IMAGES.lighting, alt: 'Modern lighting fixtures installed in Atlanta home', label: 'Lighting Installation', path: '/lighting-installation-atlanta' },
+              { img: IMAGES.evCharger, alt: 'Home EV charging station installed in Atlanta', label: 'EV Charger', path: '/ev-charger-installation-atlanta' },
+              { img: IMAGES.ceilingFan, alt: 'Ceiling fan installed by Atlanta electrician', label: 'Ceiling Fan', path: '/ceiling-fan-installation-atlanta' },
+              { img: IMAGES.outlet, alt: 'Outlet and switch repair in Atlanta home', label: 'Outlet Repair', path: '/outlet-switch-repair-atlanta' },
+              { img: IMAGES.inspection, alt: 'Electrical safety inspection in Atlanta', label: 'Safety Inspection', path: '/electrical-inspection-atlanta' },
+              { img: IMAGES.troubleshooting, alt: 'Electrician troubleshooting electrical issues in Atlanta', label: 'Troubleshooting', path: '/electrical-troubleshooting-atlanta' },
             ].map((item, i) => (
               <Reveal key={i} delay={i * 50}>
-                <div className="group relative rounded-xl overflow-hidden shadow-lg">
+                <Link
+                  to={item.path}
+                  className="group relative rounded-xl overflow-hidden shadow-lg block focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  aria-label={`View ${item.label} services in Atlanta`}
+                >
                   <img
                     src={item.img}
                     alt={item.alt}
@@ -457,11 +471,11 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-secondary-950/90 via-transparent to-transparent" />
                   <div className="absolute bottom-3 left-3">
-                    <span className="text-white font-bold text-sm bg-secondary-950/60 backdrop-blur-sm rounded-full px-3 py-1">
+                    <span className="text-white font-bold text-sm bg-secondary-950/60 backdrop-blur-sm rounded-full px-3 py-1 group-hover:bg-primary-500 group-hover:text-secondary-950 transition-colors">
                       {item.label}
                     </span>
                   </div>
-                </div>
+                </Link>
               </Reveal>
             ))}
           </div>

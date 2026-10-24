@@ -131,12 +131,13 @@ export default function Footer() {
           <div>
             © {new Date().getFullYear()} {BUSINESS.name}. All rights reserved.
           </div>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <Link to="/about" className="hover:text-primary-400 transition-colors">About</Link>
             <Link to="/services" className="hover:text-primary-400 transition-colors">Services</Link>
             <Link to="/service-areas" className="hover:text-primary-400 transition-colors">Service Areas</Link>
-            <Link to="/contact" className="hover:text-primary-400 transition-colors">Contact</Link>
             <Link to="/faq" className="hover:text-primary-400 transition-colors">FAQ</Link>
+            <Link to="/contact" className="hover:text-primary-400 transition-colors">Contact</Link>
+            <Link to="/sitemap" className="hover:text-primary-400 transition-colors">HTML Sitemap</Link>
           </div>
         </div>
       </div>

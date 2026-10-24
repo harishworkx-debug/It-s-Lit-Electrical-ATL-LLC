@@ -30,7 +30,7 @@ export default function LocationPage() {
 
   const path = `/${location.slug}`;
   const primaryService = SERVICES.find((s) => s.slug === location.primaryService);
-  const otherLocations = LOCATIONS.filter((l) => l.slug !== location.slug).slice(0, 5);
+  const otherLocations = LOCATIONS.filter((l) => l.slug !== location.slug);
 
   const schema = [
     ...locationSchema(location, path),

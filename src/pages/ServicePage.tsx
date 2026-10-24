@@ -5,6 +5,7 @@ import {
   ArrowRight,
   Zap,
   ChevronRight,
+  MapPin,
 } from 'lucide-react';
 import SEO from '@/components/SEO';
 import PageHero from '@/components/PageHero';
@@ -13,7 +14,7 @@ import FAQAccordion from '@/components/FAQAccordion';
 import CTASection from '@/components/CTASection';
 import ServiceCard from '@/components/ServiceCard';
 import ServiceIcon from '@/components/ServiceIcon';
-import { BUSINESS, IMAGES, SERVICES } from '@/data/siteData';
+import { BUSINESS, IMAGES, SERVICES, LOCATIONS } from '@/data/siteData';
 import { serviceSchema, breadcrumbSchema } from '@/data/schema';
 
 export default function ServicePage() {
@@ -248,19 +249,31 @@ export default function ServicePage() {
 
                 {/* Service Area Link */}
                 <Reveal delay={150}>
-                  <div className="bg-primary-50 rounded-2xl p-6 text-center border border-primary-100">
-                    <h3 className="font-bold text-secondary-900">
+                  <div className="bg-primary-50 rounded-2xl p-6 border border-primary-100">
+                    <h3 className="font-bold text-secondary-900 text-center">
                       Serving Atlanta & Metro Area
                     </h3>
-                    <p className="text-secondary-600 text-sm mt-2">
+                    <p className="text-secondary-600 text-sm mt-2 text-center mb-4">
                       We provide {service.name.toLowerCase()} in Atlanta and
-                      surrounding communities.
+                      surrounding communities:
                     </p>
+                    <div className="grid grid-cols-2 gap-2 text-xs">
+                      {LOCATIONS.map((loc) => (
+                        <Link
+                          key={loc.slug}
+                          to={`/${loc.slug}`}
+                          className="flex items-center gap-1.5 text-secondary-700 hover:text-primary-700 py-1 font-medium transition-colors"
+                        >
+                          <MapPin className="w-3.5 h-3.5 text-primary-500 shrink-0" />
+                          <span className="truncate">{loc.name}</span>
+                        </Link>
+                      ))}
+                    </div>
                     <Link
                       to="/service-areas"
-                      className="inline-flex items-center gap-1 mt-3 text-primary-600 font-bold text-sm hover:text-primary-700"
+                      className="inline-flex items-center justify-center gap-1 mt-4 w-full text-primary-600 font-bold text-sm hover:text-primary-700 pt-2 border-t border-primary-200"
                     >
-                      View Service Areas
+                      View All Service Areas
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -271,8 +284,44 @@ export default function ServicePage() {
         </div>
       </section>
 
+      {/* Service Coverage Across Metro Atlanta */}
+      <section className="py-16 lg:py-24 bg-white border-t border-secondary-100">
+        <div className="container-x">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="inline-flex items-center gap-2 bg-primary-50 text-primary-700 rounded-full px-4 py-1.5 text-sm font-semibold mb-4">
+              Local Service Areas
+            </div>
+            <h2 className="section-title">
+              {service.name} in Metro Atlanta Communities
+            </h2>
+            <p className="section-subtitle mx-auto">
+              Our electricians travel throughout the greater Atlanta area to provide expert {service.name.toLowerCase()}. Select your city below to get local service details:
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {LOCATIONS.map((loc) => (
+              <Link
+                key={loc.slug}
+                to={`/${loc.slug}`}
+                className="group flex items-center gap-3 bg-secondary-50 hover:bg-primary-50 p-4 rounded-xl border border-secondary-100 transition-all hover:shadow-sm"
+              >
+                <div className="w-9 h-9 bg-primary-100 group-hover:bg-primary-500 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors">
+                  <MapPin className="w-5 h-5 text-primary-700 group-hover:text-secondary-950 transition-colors" />
+                </div>
+                <div>
+                  <div className="font-bold text-secondary-900 group-hover:text-primary-700 transition-colors text-sm">
+                    {loc.name}
+                  </div>
+                  <div className="text-xs text-secondary-500">Electrician in {loc.name}</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Related Services Grid */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-16 lg:py-24 bg-secondary-50">
         <div className="container-x">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="section-title">Related Electrical Services</h2>

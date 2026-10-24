@@ -9,6 +9,7 @@ import ServiceAreas from '@/pages/ServiceAreas';
 import LocationPage from '@/pages/LocationPage';
 import Contact from '@/pages/Contact';
 import FAQ from '@/pages/FAQ';
+import Sitemap from '@/pages/Sitemap';
 import { SERVICES, LOCATIONS, BUSINESS } from '@/data/siteData';
 
 export const DynamicRoute = () => {
@@ -32,6 +33,7 @@ export function AppRoutes() {
         <Route path="/service-areas" element={<ServiceAreas />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/sitemap" element={<Sitemap />} />
         <Route path="/:slug" element={<DynamicRoute />} />
         <Route path="*" element={<Home />} />
       </Route>
