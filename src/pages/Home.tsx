@@ -69,7 +69,7 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Electrician in Atlanta, GA | It's Lit Electrical ATL"
+        title="Electrician in Atlanta, GA | It's Lit Electrical ATL LLC"
         description="Need an electrician in Atlanta, GA? It's Lit Electrical ATL LLC provides electrical service for homes and businesses. Call for service details and an estimate."
         path="/"
         image={IMAGES.hero}
@@ -99,7 +99,7 @@ export default function Home() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-tight text-shadow-lg animate-fade-in-up">
-              Trusted Electrician in Atlanta, GA
+              Trusted Electrical Services in Atlanta, GA
               <span className="block text-primary-500 mt-2">
                 It's Lit Electrical ATL LLC
               </span>

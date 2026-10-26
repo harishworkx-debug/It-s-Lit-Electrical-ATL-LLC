@@ -19,7 +19,7 @@ export default function ServiceAreas() {
   return (
     <>
       <SEO
-        title="Atlanta Electrical Service Areas | It's Lit Electrical ATL"
+        title="Electrical Service Areas Around Atlanta, GA | It's Lit Electrical"
         description="It's Lit Electrical ATL LLC serves Atlanta, GA and the surrounding metro area including Sandy Springs, Marietta, Roswell, Smyrna, Kennesaw, Decatur & more. Call (470) 204-4987."
         path="/service-areas"
         image={IMAGES.atlantaSkyline}
@@ -28,7 +28,7 @@ export default function ServiceAreas() {
       />
 
       <PageHero
-        title="Electrical Service Areas in Metro Atlanta"
+        title="Areas Served by It's Lit Electrical ATL LLC"
         subtitle="Based in Atlanta, Georgia, we serve homeowners throughout the surrounding metro area. Find your city below to learn about electrical services in your area."
         image={IMAGES.atlantaSkyline}
         imageAlt="Aerial view of Atlanta, Georgia skyline at sunset"

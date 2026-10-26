@@ -321,8 +321,8 @@ export default function LocationPage() {
                       Full Electrical Services
                     </h3>
                     <p className="text-secondary-600 text-sm mt-2">
-                      We offer 10 specialized electrical services in Atlanta and
-                      the surrounding area.
+                      We offer complete residential and commercial electrical services in Atlanta and
+                      the surrounding metro communities.
                     </p>
                     <Link
                       to="/services"

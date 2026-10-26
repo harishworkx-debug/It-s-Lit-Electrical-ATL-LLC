@@ -6,6 +6,10 @@ import {
   Zap,
   ChevronRight,
   MapPin,
+  Star,
+  Quote,
+  DollarSign,
+  ShieldCheck,
 } from 'lucide-react';
 import SEO from '@/components/SEO';
 import PageHero from '@/components/PageHero';
@@ -14,7 +18,8 @@ import FAQAccordion from '@/components/FAQAccordion';
 import CTASection from '@/components/CTASection';
 import ServiceCard from '@/components/ServiceCard';
 import ServiceIcon from '@/components/ServiceIcon';
-import { BUSINESS, IMAGES, SERVICES, LOCATIONS } from '@/data/siteData';
+import CallButton from '@/components/CallButton';
+import { BUSINESS, IMAGES, SERVICES, LOCATIONS, REVIEWS } from '@/data/siteData';
 import { serviceSchema, breadcrumbSchema } from '@/data/schema';
 
 export default function ServicePage() {
@@ -29,6 +34,10 @@ export default function ServicePage() {
 
   const path = `/${service.slug}-${BUSINESS.mainLocation.toLowerCase()}`;
   const relatedServices = SERVICES.filter((s) => s.slug !== service.slug);
+
+  // Stable review selection based on service slug length
+  const reviewIndex = service.slug.length % REVIEWS.length;
+  const review = REVIEWS[reviewIndex];
 
   const schema = [
     ...serviceSchema(service, path),
@@ -63,7 +72,7 @@ export default function ServicePage() {
       />
 
       {/* Intro + Call */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-16 lg:py-20 bg-white">
         <div className="container-x">
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
@@ -78,16 +87,26 @@ export default function ServicePage() {
                 <p className="text-secondary-600 mt-6 leading-relaxed text-lg">
                   {service.intro}
                 </p>
+                <div className="mt-8 flex flex-wrap items-center gap-4">
+                  <CallButton />
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center justify-center gap-2 border-2 border-secondary-300 hover:border-primary-500 text-secondary-800 hover:text-primary-700 font-bold px-6 py-3 rounded-xl transition-all"
+                  >
+                    Request an Estimate
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </Reveal>
             </div>
             <Reveal delay={100}>
-              <div className="bg-secondary-950 rounded-2xl p-6 lg:sticky lg:top-28">
+              <div className="bg-secondary-950 rounded-2xl p-6 lg:sticky lg:top-28 text-white">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center">
                     <Phone className="w-6 h-6 text-secondary-950" />
                   </div>
                   <div>
-                    <div className="text-secondary-400 text-sm">Call Now</div>
+                    <div className="text-secondary-400 text-sm">Direct Phone Line</div>
                     <a
                       href={`tel:${BUSINESS.phoneRaw}`}
                       className="text-white font-bold text-lg hover:text-primary-400 transition-colors"
@@ -96,16 +115,20 @@ export default function ServicePage() {
                     </a>
                   </div>
                 </div>
-                <p className="text-secondary-400 text-sm leading-relaxed mb-4">
+                <p className="text-secondary-400 text-sm leading-relaxed mb-5">
                   {service.calloutText}
                 </p>
                 <a
                   href={`tel:${BUSINESS.phoneRaw}`}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-primary-500 hover:bg-primary-600 text-secondary-950 font-bold px-6 py-3 rounded-xl transition-all hover:shadow-lg"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-primary-500 hover:bg-primary-600 text-secondary-950 font-bold px-6 py-3.5 rounded-xl transition-all hover:shadow-lg"
                 >
                   <Phone className="w-5 h-5" />
                   Call {BUSINESS.phone}
                 </a>
+                <div className="mt-4 pt-4 border-t border-secondary-800 flex items-center gap-2 text-xs text-secondary-400 justify-center">
+                  <ShieldCheck className="w-4 h-4 text-primary-400" />
+                  <span>Licensed & Insured Electrical Contractor</span>
+                </div>
               </div>
             </Reveal>
           </div>
@@ -119,7 +142,7 @@ export default function ServicePage() {
             <div className="lg:col-span-2 space-y-12">
               {service.sections.map((section, i) => (
                 <Reveal key={i}>
-                  <div>
+                  <div className="bg-white rounded-2xl p-8 border border-secondary-200/70 shadow-sm">
                     <h2 className="text-2xl md:text-3xl font-heading font-bold text-secondary-900 leading-tight">
                       {section.heading}
                     </h2>
@@ -132,9 +155,9 @@ export default function ServicePage() {
 
               {/* Benefits */}
               <Reveal>
-                <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <div className="bg-white rounded-2xl p-8 border border-secondary-200/70 shadow-sm">
                   <h2 className="text-2xl font-heading font-bold text-secondary-900">
-                    Benefits of Our {service.name} Service
+                    What Is Included in Our {service.name} Service
                   </h2>
                   <div className="grid sm:grid-cols-2 gap-4 mt-6">
                     {service.benefits.map((benefit, i) => (
@@ -151,25 +174,79 @@ export default function ServicePage() {
               <Reveal>
                 <div>
                   <h2 className="text-2xl md:text-3xl font-heading font-bold text-secondary-900 mb-8">
-                    Our {service.name} Process
+                    How Our {service.name} Process Works
                   </h2>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {service.process.map((step, i) => (
                       <div key={i} className="relative">
-                        <div className="bg-white rounded-2xl p-6 shadow-lg h-full">
-                          <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center font-heading font-extrabold text-secondary-950 text-lg mb-3">
-                            {i + 1}
+                        <div className="bg-white rounded-2xl p-6 shadow-sm border border-secondary-200/70 h-full flex flex-col justify-between">
+                          <div>
+                            <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center font-heading font-extrabold text-secondary-950 text-lg mb-3">
+                              {i + 1}
+                            </div>
+                            <h3 className="font-bold text-secondary-900">{step.title}</h3>
+                            <p className="text-secondary-500 text-sm mt-2 leading-relaxed">
+                              {step.description}
+                            </p>
                           </div>
-                          <h3 className="font-bold text-secondary-900">{step.title}</h3>
-                          <p className="text-secondary-500 text-sm mt-2 leading-relaxed">
-                            {step.description}
-                          </p>
                         </div>
                         {i < service.process.length - 1 && (
                           <ChevronRight className="hidden lg:block w-6 h-6 text-primary-300 absolute top-1/2 -right-4 -translate-y-1/2" />
                         )}
                       </div>
                     ))}
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Cost Factors & Transparent Pricing */}
+              <Reveal>
+                <div className="bg-white rounded-2xl p-8 border border-secondary-200/70 shadow-sm">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-primary-100 text-primary-700 flex items-center justify-center">
+                      <DollarSign className="w-5 h-5" />
+                    </div>
+                    <h2 className="text-2xl font-heading font-bold text-secondary-900">
+                      Understanding What Influences {service.name} Costs
+                    </h2>
+                  </div>
+                  <p className="text-secondary-600 leading-relaxed">
+                    Every property's electrical system has distinct layout, capacity, and equipment requirements. Rather than guessing, we evaluate your system and provide an upfront, transparent estimate before any work starts.
+                  </p>
+                  <div className="grid sm:grid-cols-3 gap-4 mt-6">
+                    <div className="p-4 bg-secondary-50 rounded-xl border border-secondary-200">
+                      <div className="font-bold text-secondary-900 text-sm mb-1">System Accessibility</div>
+                      <div className="text-xs text-secondary-600">Attic, crawlspace, or finished wall access determines labor and wiring routes.</div>
+                    </div>
+                    <div className="p-4 bg-secondary-50 rounded-xl border border-secondary-200">
+                      <div className="font-bold text-secondary-900 text-sm mb-1">Equipment & Capacity</div>
+                      <div className="text-xs text-secondary-600">Amperage ratings, circuit breakers, and specialized hardware impact component costs.</div>
+                    </div>
+                    <div className="p-4 bg-secondary-50 rounded-xl border border-secondary-200">
+                      <div className="font-bold text-secondary-900 text-sm mb-1">Code & Permitting</div>
+                      <div className="text-xs text-secondary-600">City inspection and utility coordination requirements vary by project scope.</div>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Customer Proof / Genuine Review */}
+              <Reveal>
+                <div className="bg-primary-50 rounded-2xl p-8 border border-primary-200/70">
+                  <div className="flex items-center gap-1 text-primary-500 mb-3">
+                    {[...Array(review.rating)].map((_, idx) => (
+                      <Star key={idx} className="w-5 h-5 fill-current" />
+                    ))}
+                  </div>
+                  <blockquote className="text-secondary-800 text-lg italic leading-relaxed mb-4">
+                    "{review.text}"
+                  </blockquote>
+                  <div className="flex items-center justify-between pt-4 border-t border-primary-200/60">
+                    <div>
+                      <div className="font-bold text-secondary-900">{review.name}</div>
+                      <div className="text-xs text-secondary-500">{review.location} • Verified Customer Review</div>
+                    </div>
+                    <Quote className="w-8 h-8 text-primary-300" />
                   </div>
                 </div>
               </Reveal>
@@ -201,7 +278,7 @@ export default function ServicePage() {
 
                 {/* Call Card */}
                 <Reveal delay={50}>
-                  <div className="bg-secondary-950 rounded-2xl p-6 text-center">
+                  <div className="bg-secondary-950 rounded-2xl p-6 text-center text-white">
                     <Zap className="w-10 h-10 text-primary-500 mx-auto mb-3" />
                     <h3 className="text-white font-heading font-bold text-lg">
                       {service.calloutTitle}
@@ -221,7 +298,7 @@ export default function ServicePage() {
 
                 {/* Related Services */}
                 <Reveal delay={100}>
-                  <div className="bg-white rounded-2xl p-6 shadow-lg">
+                  <div className="bg-white rounded-2xl p-6 shadow-sm border border-secondary-200">
                     <h3 className="font-bold text-secondary-900 mb-4">
                       Other Electrical Services
                     </h3>
@@ -330,8 +407,8 @@ export default function ServicePage() {
               Atlanta, Georgia.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-            {relatedServices.map((s) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {relatedServices.slice(0, 8).map((s) => (
               <ServiceCard key={s.slug} service={s} />
             ))}
           </div>
